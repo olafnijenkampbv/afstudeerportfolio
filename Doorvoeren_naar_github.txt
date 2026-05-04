@@ -1,3 +1,11 @@
 git add .
+<<<<<<< HEAD
 git commit -m "tekst bestand over github"
 git push
+=======
+git commit -m "tekst bestand"
+git push
+
+Ophalen van gegevens:
+git pull
+>>>>>>> a10e5f19d04a72da04a89223960cb67412ef7375
