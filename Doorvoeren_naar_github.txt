@@ -4,3 +4,4 @@ git push
 
 Ophalen van gegevens:
 git pull
+
