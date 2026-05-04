@@ -1,3 +1,6 @@
 git add .
-git commit -m "korte beschrijving van je wijziging"
+git commit -m "tekst bestand"
 git push
+
+Ophalen van gegevens:
+git pull
