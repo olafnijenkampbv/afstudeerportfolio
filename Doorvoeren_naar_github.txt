@@ -1,5 +1,5 @@
 git add .
-git commit -m "tekst bestand"
+git commit -m "mappen voor icons aangemaakt"
 git push
 
 Ophalen van gegevens:
