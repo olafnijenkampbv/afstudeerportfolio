@@ -1,26 +1,73 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* Brand kleurenpalet — beschikbaar als Tailwind utilities */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Groen */
+  --color-green-dark: #58694C;
+  --color-green-light: #EEF0ED;
+
+  /* Oranje */
+  --color-orange: #E94E1B;
+  --color-orange-light: #FFE5DD;
+
+  /* Neutraal */
+  --color-border: #E3E2E2;
+  --color-bg: #FAFAF7;
+  --color-text: #111111;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #FAFBFA;
+  color: #111111;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Dropdown animaties */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideUp {
+  from { opacity: 1; transform: translateY(0); }
+  to   { opacity: 0; transform: translateY(-10px); }
+}
+.dropdown-slide-in  { animation: slideDown 200ms ease-out forwards; }
+.dropdown-slide-out { animation: slideUp  180ms ease-in  forwards; }
+
+/* Hero hover — laptop + groene shape samen schalen */
+.hero-hover-scale {
+  cursor: pointer;
+  transition: transform 0.35s ease;
+  will-change: transform;
+}
+.hero-hover-scale:hover {
+  transform: scale(1.06);
+}
+.hero-hover-scale * {
+  pointer-events: none;
+}
+
+/* Hero hover — beplantingstekening schalen + schaduw */
+.hero-hover-plant {
+  cursor: pointer;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.22);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  will-change: transform;
+}
+.hero-hover-plant:hover {
+  transform: scale(1.06);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.32);
+}
+.hero-hover-plant * {
+  pointer-events: none;
+}
+
+/* Portfolio sitemap icon filters */
+.sitemap-icon {
+  filter: brightness(0) saturate(100%) invert(37%) sepia(28%) saturate(470%) hue-rotate(62deg) brightness(85%);
+}
+.sitemap-card:hover .sitemap-icon {
+  filter: brightness(0) saturate(100%) invert(43%) sepia(99%) saturate(1428%) hue-rotate(349deg) brightness(101%);
 }

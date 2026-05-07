@@ -1,9 +1,35 @@
+import type { Metadata } from 'next';
+import ProductHero from '@/components/sections/ProductHero';
+import EvidenceBadgeSection from '@/components/sections/EvidenceBadgeSection';
+import DocumentationLayout from '@/components/documentation/DocumentationLayout';
+import DocumentationSectieRenderer from '@/components/documentation/DocumentationSectieRenderer';
+import { beroepsproducten } from '@/lib/data/beroepsproducten';
+import { sectiesBP2 } from '@/lib/data/documentatie-secties';
+
+export const metadata: Metadata = {
+  title: 'BP2 — Beplantingsplan Webtool | Olaf Nijenkamp',
+};
+
+const bp = beroepsproducten[1];
+
 export default function Beroepsproduct2() {
-    return (
-        <main>
-            <h1>Beroepsproduct 2</h1>
-            <h2>Beplantingsplan Webtool</h2>
-            <p>Communicatieconcept gericht op het ondersteunen van hoveniers bij het maken van beplantingsplannen.</p>
-        </main>
-    );
+  return (
+    <>
+      <ProductHero
+        nummer={bp.nummer}
+        titel={bp.titel}
+        niveau={bp.niveau}
+        intro={bp.intro}
+        imageSrc={bp.imageSrc}
+        imageAlt={bp.imageAlt}
+      />
+      <EvidenceBadgeSection
+        leeruitkomsten={bp.leeruitkomsten}
+        skills={bp.skills}
+      />
+      <DocumentationLayout secties={sectiesBP2}>
+        <DocumentationSectieRenderer secties={sectiesBP2} />
+      </DocumentationLayout>
+    </>
+  );
 }
