@@ -1,5 +1,5 @@
 git add .
-git commit -m "icons en plaajtes geupdate"
+git commit -m "Portfolio geupdate. Header, hero en inleiding"
 git push
 
 Ophalen van gegevens:
